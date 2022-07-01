@@ -1,0 +1,19 @@
+---
+
+- hosts: ungrouped
+  become: true
+  tasks:
+
+  - name: Update the repo
+    apt:
+      update_cache: yes
+
+  - name: install apache2 package
+    apt:
+      name: apache2
+      state: absent
+
+  - name: Install php mod for apache
+    apt:
+      name: libapache2-mod-php
+      state: absent
