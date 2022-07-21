@@ -1,0 +1,12 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: create user
+    tags: always
+    user:
+      name: ali
+      group: root
+
